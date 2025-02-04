@@ -3,6 +3,13 @@ name: Terraform Deployment
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      confirm:
+        type: boolean
+        required: true
+        default: false
+        description: "Are you sure you want to deploy?"
 
 env:            
   AWS_REGION: ap-southeast-1  
